@@ -2,6 +2,7 @@ class Result < ApplicationRecord
   include ActiveModel::Serialization
 
   validate :number_must_be_greater_than_zero
+  validates :input, uniqueness: { message: 'already exists' }
   validates :input, format: { with: /\d/, message: 'должно быть числом' }
   after_validation :count_result
 

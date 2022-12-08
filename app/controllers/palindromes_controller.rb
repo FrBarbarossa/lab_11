@@ -18,6 +18,6 @@ class PalindromesController < ApplicationController
   end
 
   def show
-    render xml: Result.all.to_xml
+    render xml: Result.all.as_json
   end
 end

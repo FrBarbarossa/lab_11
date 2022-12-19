@@ -6,7 +6,6 @@ class PalindromesController < ApplicationController
 
   def result
     @new_result = Result.find_by(input: params[:number])
-    # Result.create!(input:100, result: [1,2,3]) # Тест на уникальность
     return unless @new_result.nil?
 
     @new_result = Result.new(input: params[:number])
